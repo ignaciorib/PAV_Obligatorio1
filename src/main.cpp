@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include <vector>
 
 #include "DtConsulta.h"
 #include "Consulta.h"
