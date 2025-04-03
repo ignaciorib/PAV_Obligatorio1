@@ -1,8 +1,8 @@
 #include <cstdlib>
 #include <stdlib.h>
 
-#include "Socio.h"
-#include "DtFecha.h"
+#include "../headers/Socio.h"
+#include "../headers/DtFecha.h"
 #include "../headers/Mascota.h"
 
 

@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include "Genero.h"
-#include "Gato.h"
+#include "../headers/Genero.h"
+#include "../headers/Gato.h"
 
 
 Gato::Gato() {}

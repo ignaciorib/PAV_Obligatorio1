@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include "Mascota.h"
-#include "Genero.h"
+#include "../headers/Mascota.h"
+#include "../headers/Genero.h"
 
 
 Mascota::Mascota() {}

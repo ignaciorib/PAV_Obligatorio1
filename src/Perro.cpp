@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include "Mascota.h"
-#include "Genero.h"
-#include "Perro.h"
-#include "RazaPerro.h"
+#include "../headers/Mascota.h"
+#include "../headers/Genero.h"
+#include "../headers/Perro.h"
+#include "../headers/RazaPerro.h"
 
 
 Perro::Perro() {}

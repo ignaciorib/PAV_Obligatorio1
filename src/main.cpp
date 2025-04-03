@@ -2,19 +2,19 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "DtConsulta.h"
-#include "Consulta.h"
-#include "DtFecha.h"
-#include "DtGato.h"
-#include "DtMascota.h"
-#include "DtPerro.h"
-#include "Gato.h"
-#include "Genero.h"
-#include "Mascota.h"
-#include "Perro.h"
-#include "RazaPerro.h"
-#include "Socio.h"
-#include "TipoPelo.h"
+#include "../headers/DtConsulta.h"
+#include "../headers/Consulta.h"
+#include "../headers/DtFecha.h"
+#include "../headers/DtGato.h"
+#include "../headers/DtMascota.h"
+#include "../headers/DtPerro.h"
+#include "../headers/Gato.h"
+#include "../headers/Genero.h"
+#include "../headers/Mascota.h"
+#include "../headers/Perro.h"
+#include "../headers/RazaPerro.h"
+#include "../headers/Socio.h"
+#include "../headers/TipoPelo.h"
 
 #define MAX_SOCIOS 20
 

@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string.h>
 
-#include "Genero.h"
-#include "DtMascota.h"
+#include "../headers/Genero.h"
+#include "../headers/DtMascota.h"
 
 
 DtMascota::DtMascota() {}

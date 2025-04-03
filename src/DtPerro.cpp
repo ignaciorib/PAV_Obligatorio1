@@ -3,10 +3,10 @@
 #include <iostream>
 #include <string.h>
 
-#include "Genero.h"
-#include "DtMascota.h"
-#include "RazaPerro.h"
-#include "DtPerro.h"
+#include "../headers/Genero.h"
+#include "../headers/DtMascota.h"
+#include "../headers/RazaPerro.h"
+#include "../headers/DtPerro.h"
 
 
 DtPerro::DtPerro() {}
