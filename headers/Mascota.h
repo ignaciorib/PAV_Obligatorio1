@@ -21,7 +21,7 @@ class Mascota : public Socio{
         int GeneroM;
     public:
         Mascota();
-        Mascota(string, float, Genero);
+        Mascota(string, float, int);
         float getPeso();
         string getNombreMsc();
         string getGenero();
