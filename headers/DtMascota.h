@@ -21,7 +21,7 @@ class DtMascota {
         float racionDiaria;
     public:
         DtMascota();
-        DtMascota(string, Genero, float, float);
+        DtMascota(string, int, float, float);
         void setNombre(string);
         void setGenero(int);
         void setPeso(float);
