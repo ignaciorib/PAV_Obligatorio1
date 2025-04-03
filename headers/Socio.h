@@ -34,6 +34,8 @@ class Socio{
         string getCI();
         void setNombre(string);
         void setCI(string);
+        Mascota* getMascota(Socio, string);
+        Mascota* getMascotas(Socio);
 
         void agregarMascota(Mascota* mascota);
 };
