@@ -25,6 +25,10 @@ string Mascota::getNombreMsc(){
     return nombreMsc;
 }
 
+string Mascota::getGenero() {
+    return genero;
+}
+
 //virtual float obtenerRD()
 
 /*
