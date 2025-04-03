@@ -13,7 +13,7 @@
 
 DtConsulta::DtConsulta() {}
 
-DtConsulta::DtConsulta(DtFecha &dF, string m) {
+DtConsulta::DtConsulta(DtFecha dF, string m) {
     fechaConsulta = dF;
     motivo = m;
 }
