@@ -56,6 +56,14 @@ Consulta Socio::getConsulta() {
     
 }
 
+//prueba
+void Socio::agregarMascota(Mascota* mascota){
+    if(topeM < 10){
+        m[topeM++] = mascota;
+    }else{
+        throw overflow_error("No se pueden agregar mas mascotas."); //////////verificar
+    }
+}
 
 /*#include "../headers/Socio.h"
 #include <iostream>
