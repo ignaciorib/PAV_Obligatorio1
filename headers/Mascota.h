@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class Mascota : public Socio{
+class Mascota {
     private:
         string nombreMsc;
         float peso;
