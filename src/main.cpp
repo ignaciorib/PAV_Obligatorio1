@@ -153,13 +153,13 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
 
 void agregarMascota(string ci, DtMascota* dtMascota) {
     
-        //recorrr el arreglo socios y verificar si la cedula del mismo esta en el arreglo
-        //para verificar eso podemos usar un for
-        /* for(int i = 0; i<=cantPersonas; i++){
+        /for(int i = 0; i <= s.tope; i++){
                 if(ci == arr[i]){
-                        se agrega la mascota
+                    Mascota(
+                }else{
+                    
                 }
-        */
+        
 }
 
 void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
