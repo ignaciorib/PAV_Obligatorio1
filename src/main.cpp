@@ -148,12 +148,22 @@ int main () {
 }
 
 void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* dtMascota) {
-    
+    if (s.tope = MAX_SOCIOS)
+        cout << "no hay espacio para mas socios";
+    else {
+        int i = s.tope;
+        Socio aux;/////////////////////////////////////////////////////////////////////////////////////////////
+        Socio aux = new Socio(nombre, ci, fechaIngreso::getDia(), fechaIngreso::getMes(), fechaIngreso::getAnio());
+        a[i] = aux;
+        Mascota* auxM = Mascota(dtMascota::getNombre(), dtMascota::getPeso(), dtMascota::getGenero());
+        m
+        s.tope++;
+    }
 }
 
 void agregarMascota(string ci, DtMascota* dtMascota) {
     
-        /for(int i = 0; i <= s.tope; i++){
+        for(int i = 0; i <= s.tope; i++){
                 if(ci == arr[i]){
                     Mascota(dtMascota::getNombre(), dtMascota::getPeso(), dtMascota::getGenero());
                     
