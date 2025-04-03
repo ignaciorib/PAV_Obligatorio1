@@ -3,10 +3,11 @@
 
 #include <string>
 #include "../headers/Socio.h"
+#include "../headers/Mascota.h"
 
 using namespace std;
 
-class Consulta: public Socio {
+class Consulta : public Socio {
     private:
         string descripcion;
     public:

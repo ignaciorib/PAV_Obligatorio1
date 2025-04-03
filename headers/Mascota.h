@@ -2,14 +2,15 @@
 #define MASCOTA_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
+#include "../headers/Socio.h"
+#include "../headers/Genero.h"
+#include "../headers/Consulta.h"
 
-#include "Genero.h"
-#include "Socio.h"
 
 using namespace std;
 
-class Mascota: public Socio {
+class Mascota : public Socio{
     private:
         string nombreMsc;
         float peso;
@@ -23,17 +24,4 @@ class Mascota: public Socio {
         /////////~Mascota();
 };
 
-/*
-#include <string>
-
-class Mascota {
-private:
-    std::string nombre;
-    int edad;
-
-public:
-    Mascota(std::string nombre, int edad);
-    void mostrarInfo();
-};
-*/
-#endif
+#endif 

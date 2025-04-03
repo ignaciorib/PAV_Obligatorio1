@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <string.h>
-#include "DtFecha.h"
-#include "Consulta.h"
+#include "../headers/DtFecha.h"
+#include "../headers/Socio.h"
+#include "../headers/Mascota.h"
+#include "../headers/Consulta.h"
 
 using namespace std;
 
