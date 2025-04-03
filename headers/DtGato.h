@@ -19,7 +19,7 @@ class DtGato : public DtMascota {
         TipoPelo pelo;
     public:
         DtGato();
-        DtGato(TipoPelo);
+        DtGato(int);
 };
 
 #endif /* DTGATO_H */
