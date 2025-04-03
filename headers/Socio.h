@@ -34,7 +34,7 @@ class Socio{
         void setNombre(string);
         void setCI(string);
 
-        void agregarMascota(Mascota* nuevaMascota);
+        void agregarMascota(Mascota* mascota);
 };
 
 /*#include <string>
