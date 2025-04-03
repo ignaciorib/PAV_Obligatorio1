@@ -112,28 +112,13 @@ int main () {
     cin >> rD;
     ///////////////////////////
     DtMascota(n, g, p, rD);/////////////////////////////////////////////////////////en funciones???
-    cout << " gramos."
-            "\n - (en caso de ser Perro):"////////////////////////////////separar menues mascot
-            "    - Tiene vacina del Cachorro: Si / No\n";
-    string vC;
-    bool auxBoolVC;
-    cin >> vC;
-    if (vC == "Si")
-        auxBoolVC = true;
-    else
-        auxBoolVC = false;
-    cout << "\n  - Ingrese la Raza:"
-            "       1) Labrador\n"
-            "       2) Ovejero\n"
-            "       3) Bulldog\n"
-            "       4) Pitbull\n"
-            "       5) Collie\n"
-            "       6) Pekines\n"
-            "       7) Otro\n";
-    int auxRaza;
-    cin >> auxRaza;
-    DtPerro(auxRaza, auxBoolVC);
-    cout << " - (En caso de ser Gato):\n"
+    cout << " gramos.\n"
+            "\nSeleccione el tipo:      0 si es Perro\n"
+            "                           1 si es Gato: ";
+    int tipoMascot;
+    cin >> tipoMascot;
+    if (tipoMascot) {
+        cout << 
             "    - Ingrese el tipo de pelo: \n"
             "       1) Corto\n"
             "       2) Mediano\n"
@@ -141,6 +126,30 @@ int main () {
     int auxTPelo;
     cin >> auxTPelo;
     DtGato(auxTPelo);
+    }
+    else {
+        " - Tiene vacuna del Cachorro: Si / No\n";///////////////////////////////cambiar
+        string vC;
+        bool auxBoolVC;
+        cin >> vC;
+        if (vC == "Si")
+            auxBoolVC = true;
+        else
+            auxBoolVC = false;
+        cout << "\n  - Ingrese la Raza:"
+                "       1) Labrador\n"
+                "       2) Ovejero\n"
+                "       3) Bulldog\n"
+                "       4) Pitbull\n"
+                "       5) Collie\n"
+                "       6) Pekines\n"
+                "       7) Otro\n";
+        int auxRaza;
+        cin >> auxRaza;
+        DtPerro(auxRaza, auxBoolVC);
+    }
+            
+    
         
     
     
@@ -152,12 +161,13 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         cout << "no hay espacio para mas socios";
     else {
         int i = s.tope;
-        Socio aux;/////////////////////////////////////////////////////////////////////////////////////////////
-        Socio aux = new Socio(nombre, ci, fechaIngreso::getDia(), fechaIngreso::getMes(), fechaIngreso::getAnio());
+        Socio* aux = new Socio(nombre, ci, fechaIngreso::getDia(), fechaIngreso::getMes(), fechaIngreso::getAnio());
         a[i] = aux;
-        Mascota* auxM = Mascota(dtMascota::getNombre(), dtMascota::getPeso(), dtMascota::getGenero());
-        m
-        s.tope++;
+        if (tipoMascot)
+            Mascota* auxG = Gato(dtMascota::getNombre(), dtMascota::getPeso(), dtMascota::getGenero());
+        else
+            Mascota* auxG = Perro();
+            s.tope++;
     }
 }
 
