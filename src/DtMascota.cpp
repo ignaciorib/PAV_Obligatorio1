@@ -9,9 +9,12 @@
 
 DtMascota::DtMascota() {}
 
-DtMascota::DtMascota(string n, Genero g, float p, float rD) {
+DtMascota::DtMascota(string n, int g, float p, float rD) {
     nombre = n;
-    genero = g;
+    if g
+        genero = Genero::Macho;
+    else
+        genero = Genero::Hambra;
     peso = p;
     racionDiaria = rD;
 }
