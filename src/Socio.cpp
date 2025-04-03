@@ -1,9 +1,10 @@
 #include <cstdlib>
 #include <stdlib.h>
 
+#include "../headers/Mascota.h"
 #include "../headers/Socio.h"
 #include "../headers/DtFecha.h"
-#include "../headers/Mascota.h"
+
 
 
 Socio::Socio() {}
@@ -35,7 +36,11 @@ int Socio::getTopeM() {
 }
 
 Mascota* Socio::getMascota() {
-    return m[0];
+    if(topeM > 0){
+        return m[0]; 
+    }else{
+        return NULL;
+    }
 }
 
 int Socio::getTopeC() {
@@ -43,7 +48,12 @@ int Socio::getTopeC() {
 }
 
 Consulta Socio::getConsulta() {
-    return c[0];
+    if(topeC > 0){
+        return c[0]; 
+    }else{
+        return Consulta();
+    }
+    
 }
 
 

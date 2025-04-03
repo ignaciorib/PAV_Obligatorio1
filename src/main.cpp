@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
+#include <stdexcept>
 
 #include "../headers/DtConsulta.h"
 #include "../headers/Consulta.h"

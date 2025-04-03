@@ -74,7 +74,7 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(HEADERS)
 # -r ya que estoy borrando carpetas 
 .PHONY: clean
 clean:
-	rm -r $(BIN_DIR) $(OBJ_DIR)
+	rm -rf $(BIN_DIR) $(OBJ_DIR)
 
 run : $(TARGET)
 	./$(TARGET)

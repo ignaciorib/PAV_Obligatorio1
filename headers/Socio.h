@@ -10,6 +10,9 @@
 
 using namespace std;
 
+class Mascota;
+
+
 class Socio{
     private:
         string nombre;
@@ -30,6 +33,8 @@ class Socio{
         string getCI();
         void setNombre(string);
         void setCI(string);
+
+        void agregarMascota(Mascota* nuevaMascota);
 };
 
 /*#include <string>
