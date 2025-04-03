@@ -51,28 +51,98 @@ int main () {
             "   6) Obtener mascotas\n"
             "   0) Salir\n"
             "Opcion: ";
-    
+    int opcion;
+    cin >> opcion;
+    switch(opcion){
+        case 1:
+            string ci, nombre;
+            int dia, mes, anio;
+            string ci, nombre, nombreMascota, tipoMascota;
+            int edadMascota;
+
+            cout << "Ingrese CI del socio: ";
+            cin >> ci;
+            cout << "Ingrese Nombre del socio: ";
+            cin.ignore();  // Para evitar problemas con getline
+            getline(std::cin, nombre);
+
+            cout << "Ingrese Nombre de la mascota: ";
+            getline(cin, nombreMascota);
+            cout << "Ingrese Edad de la mascota: ";
+            cin >> edadMascota;
+            cout << "Ingrese Tipo de mascota (Perro, Gato, etc.): ";
+            cin.ignore();
+            getline(cin, tipoMascota);
+
+            // Crear el objeto DtMascota con los datos ingresados
+            DtMascota dtMascota(nombreMascota, edadMascota, tipoMascota);
+
+            // Registrar al socio con su mascota (sin devolver un puntero)
+            registrarSocio(ci, nombre, dtMascota);
+            break;
+
+            //void registrarSocio(string ci, string nombre, DtMascota& dtMascota);
+        case 0:
+            cout << "Saliendo del programa...\n";
+            break;
+
+        default:
+            cout << "Opción inválida. Intente nuevamente.\n";
+            break;
+    }
 
 
 
-    DtMascota aux;
+
     cout << "\nA continuación ingrese los datos de su mascota \n"
             " - Nombre: ";
     string n;
     cin >> n;
-    aux.setNombre(n);
     cout << 
-            "\nSeleccione el género:  0 si es hembra\n            1 si es macho: "; /////////////////////////////////////////////
+            "\nSeleccione el género:    0 si es hembra\n"
+            "                           1 si es macho: ";
     int g;
     cin >> g;
-    aux.setGenero(g);
-    cout << " - Peso: " ;
+    cout << "\n - Peso: " ;
     float p;
     cin >> p;
-    aux.setPeso(p);
-    cout << " kg\n"
-            " - Ración Diaria: ";
-
+    cout << " kg"
+            "\n - Ración Diaria: ";
+    float rD;
+    cin >> rD;
+    ///////////////////////////
+    DtMascota(n, g, p, rD);/////////////////////////////////////////////////////////en funciones???
+    cout << " gramos."
+            "\n - (en caso de ser Perro):"////////////////////////////////separar menues mascot
+            "    - Tiene vacina del Cachorro: Si / No\n";
+    string vC;
+    bool auxBoolVC;
+    cin >> vC;
+    if (vC == "Si")
+        auxBoolVC = true;
+    else
+        auxBoolVC = false;
+    cout << "\n  - Ingrese la Raza:"
+            "       1) Labrador\n"
+            "       2) Ovejero\n"
+            "       3) Bulldog\n"
+            "       4) Pitbull\n"
+            "       5) Collie\n"
+            "       6) Pekines\n"
+            "       7) Otro\n";
+    int auxRaza;
+    cin >> auxRaza;
+    DtPerro(auxRaza, auxBoolVC);
+    cout << " - (En caso de ser Gato):\n"
+            "    - Ingrese el tipo de pelo: \n"
+            "       1) Corto\n"
+            "       2) Mediano\n"
+            "       3) Largo\n";
+    int auxTPelo;
+    cin >> auxTPelo;
+    DtGato(auxTPelo);
+        
+    
     
     return 0;
 }
