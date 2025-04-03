@@ -35,12 +35,23 @@ int Socio::getTopeM() {
     return topeM;
 }
 
-Mascota* Socio::getMascota() {
-    if(topeM > 0){
-        return m[0]; 
-    }else{
-        return NULL;
+Mascota* Socio::getMascota(Socio s, string nam) { //Devuelva una macota especifica
+    int i = 0;
+    while (m[i].getNombre() != nam) {
+        i++;
     }
+    if(i > s.getTopeM()){
+        return NULL; 
+    }else{
+        return m[i];
+    }
+}
+
+Mascota* Socio::getMascotas(Socio s) { //Devuelve todas las macotas
+    if (s.getTopeM() > 0)
+        return m[0];
+    else 
+        return NULL;
 }
 
 int Socio::getTopeC() {
