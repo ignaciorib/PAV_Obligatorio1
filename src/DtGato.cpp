@@ -11,6 +11,16 @@
 
 DtGato::DtGato() {}
 
-DtGato::DtGato(TipoPelo tP) {
-    pelo = tP;
+DtGato::DtGato(int tP) {
+    switch (tP) {
+        case 1:
+            pelo = TipoPelo::Corto;
+            break;
+        case 2:
+            pelo = TipoPelo::Mediano;
+            break;
+        case 3:
+            pelo = TipoPelo::Largo;
+            break;
+    }
 }
