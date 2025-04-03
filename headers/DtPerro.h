@@ -20,7 +20,7 @@ class DtPerro : public DtMascota {
         bool vacunaCachorro;
     public:
         DtPerro();
-        DtPerro(RazaPerro, bool);
+        DtPerro(int, bool);
 };
 
 #endif /* DTPERRO_H */
