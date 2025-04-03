@@ -155,7 +155,7 @@ void agregarMascota(string ci, DtMascota* dtMascota) {
     
         /for(int i = 0; i <= s.tope; i++){
                 if(ci == arr[i]){
-                    Mascota(
+                    Mascota(dtMascota::getNombre(), dtMascota::getPeso(), 
                 }else{
                     
                 }
