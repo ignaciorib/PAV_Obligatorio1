@@ -24,6 +24,7 @@ class Mascota : public Socio{
         Mascota(string, float, Genero);
         float getPeso();
         string getNombreMsc();
+        string getGenero();
         virtual float obtenerRD() = 0;
         /////////~Mascota();
 };
