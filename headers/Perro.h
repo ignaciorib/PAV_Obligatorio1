@@ -2,10 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "Genero.h"
-#include "Socio.h"
 #include "Mascota.h"
-#include "TipoPelo.h"
 #include "RazaPerro.h"
 
 using namespace std;
@@ -16,7 +13,7 @@ class Perro: public Mascota {
         bool vacunaCachorro;
     public:
         Perro();
-        Perro(RazaPerro, bool);
+        Perro(string, float, int genero, int raza, bool);
         RazaPerro getRazaP();
         bool getVacu();
         float obtenerRD();
