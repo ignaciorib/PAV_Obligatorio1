@@ -25,9 +25,13 @@ string Mascota::getNombreMsc(){
     return nombreMsc;
 }
 
-string Mascota::getGenero() {
-    return genero;
+int Mascota::getGenero() {
+    if (GeneroM == Genero::Macho)
+        return 1;
+    else
+        return 0;
 }
+
 
 //virtual float obtenerRD()
 
