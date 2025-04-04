@@ -123,9 +123,9 @@ int main () {
             "       1) Corto\n"
             "       2) Mediano\n"
             "       3) Largo\n";
-    int auxTPelo;
-    cin >> auxTPelo;
-    DtGato(auxTPelo);
+        int auxTPelo;
+        cin >> auxTPelo;
+        DtGato(auxTPelo);
     }
     else {
         " - Tiene vacuna del Cachorro: Si / No\n";///////////////////////////////cambiar
@@ -164,10 +164,10 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         Socio* aux = new Socio(nombre, ci, fechaIngreso::getDia(), fechaIngreso::getMes(), fechaIngreso::getAnio());
         a[i] = aux;
         if (tipoMascot)
-            Mascota* auxG = Gato(dtMascota::getNombre(), dtMascota::getPeso(), dtMascota::getGenero());
+            Mascota* auxG = Gato();
         else
-            Mascota* auxG = Perro();
-            s.tope++;
+            Mascota* auxP = Perro(dtMascota::);
+        s.tope++;
     }
 }
 
