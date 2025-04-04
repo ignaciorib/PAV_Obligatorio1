@@ -1,17 +1,15 @@
-#ifndef SOCIO_H
-#define SOCIO_H
+#ifndef socio
+#define socio
 
 #include <iostream>
 #include <string.h>
-#include "../headers/DtFecha.h"
-#include "../headers/Socio.h"
-#include "../headers/Mascota.h"
-#include "../headers/Consulta.h"
+
+#include "DtFecha.h"
+#include "Consulta.h"
+#include "Mascota.h"
+
 
 using namespace std;
-
-class Consulta;//////////////////////////////////////
-class Mascota;//////////////////////////////////////
 
 
 class Socio{
@@ -19,9 +17,11 @@ class Socio{
         string nombre;
         string CI;
         DtFecha fechaIng;
-        Mascota* m[10];
+        
+        Mascota* m[9];
         int topeM;
-        Consulta c[20];
+        
+        Consulta* c[19];
         int topeC;
     public:
         Socio();
@@ -30,26 +30,14 @@ class Socio{
         int getTopeM();
         Mascota* getMascota();
         int getTopeC();
-        Consulta getConsulta();
+        Consulta* getConsulta();
         string getCI();
         void setNombre(string);
         void setCI(string);
-        Mascota* getMascota(Socio, string);
-        Mascota* getMascotas(Socio);
+        void setTopeM();
+        void setArrM(Mascota*);
 
-        void agregarMascota(Mascota* mascota);
 };
 
-/*#include <string>
 
-class Socio {
-private:
-    std::string nombre;
-    int id;
-
-public:
-    Socio(std::string nombre, int id);
-    void mostrarInfo();
-};*/
-
-#endif
+#endif /* NEWFILE_H */
