@@ -24,6 +24,6 @@ RazaPerro Perro::getRazaP() {
     return raza;
 }
 
-bool Perro::vacu() {
+bool Perro::getVacu() {
     return vacunaCachorro;
 }
