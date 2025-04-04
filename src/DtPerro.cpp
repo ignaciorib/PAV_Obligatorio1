@@ -11,7 +11,8 @@
 
 DtPerro::DtPerro() {}
 
-DtPerro::DtPerro(int r, bool vC) {
+DtPerro::DtPerro(string n, int g, float p, int p_g, int r, bool vC) {
+    DtMascota(n, g, p, p_g);
     switch (r) {
         case 1:
             raza = RazaPerro::labrador;
@@ -36,4 +37,34 @@ DtPerro::DtPerro(int r, bool vC) {
             break;
     }
     vacunaCachorro = vC;
+}
+
+int DtPerro::getRaza() {
+    switch (raza) {
+        case RazaPerro::labrador:
+            return 1;
+            break;
+        case RazaPerro::ovejero:
+            return 2;
+            break;
+        case RazaPerro::bulldog:
+            return 3;
+            break;
+        case RazaPerro::pitbull:
+            return 4;
+            break;
+        case RazaPerro::collie:
+            return 5;
+            break;
+        case RazaPerro::pekines:
+            return 6;
+            break;
+        case RazaPerro::otro:
+            return 7;
+            break;
+    }
+}
+
+int DtPerro::getVC() {
+    return vacunaCachorro;
 }
