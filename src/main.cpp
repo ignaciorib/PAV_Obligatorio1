@@ -165,37 +165,49 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
     if (s.tope = MAX_SOCIOS)
         cout << "no hay espacio para mas socios";
     else {
-        int i = s.tope;
-        Socio* aux = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
-        s.socios[i] = aux;
+        int posSocio = s.tope;
+        Socio* auxS = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
+        s.socios[posSocio] = auxS;
         s.tope++;
+        Mascota* auxM;
         if (dtMascota->getPerroGato()){
-            Mascota* aux = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
+            Mascota* auxM = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), );///////////////////////
         }
         else
-            Mascota* aux = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
-        Socio->setArrM(aux);
+            Mascota* auxM = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), , );///////////////////////
+        Socio->setArrM(s.socios[], int posSocio, auxM);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+    }
 }
 
-void agregarMascota(string ci, DtMascota* dtMascota) {
-    Mascota* aux;
-    int i = 0;
-    while (s.socios[i] <= s.tope && s.socios[i]->getCI() != ci)
-        i++;
-    int j = s.socios[i]->getTopeM();
+void agregarMascota(string ci, DtMascota* dtMascota) {////////////////////////////////////////////////////////////////////////////LEGAL??????????
+    Mascota* auxM;
+    int posSocio = 0;
+    while (s.socios[posSocio] <= s.tope && s.socios[posSocio]->getCI() != ci)
+        posSocio++;
+    int j = s.socios[posSocio]->getTopeM();
     if (j <= 9) {
-        if (dtMascota->getPerroGato())
-            aux = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
+        if (dtMascota->getPerroGato()){
+            Mascota* auxM = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), );////////
+        }
         else
-            aux = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
-        Socio->setArrM(aux);
+            Mascota* auxM = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), , );////////
+        Socio->setArrM(s.socios[], int posSocio, auxM);
     }
     else
         cout << "Este socio no puede tener mas mascotas asociadas";
 }
 
 void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
-    
+    int posSocio = 0;
+    while (s.socios[posSocio] <= s.tope && s.socios[posSocio]->getCI() != ci)
+        posSocio++;
+    int j = s.socios[posSocio]->getTopeC();
+    if (j <= 20) {
+        Consulta* auxC = new Consulta(motivo, fechaConsulta->getDia(), fechaConsulta->getMes(), fechaConsulta->getAnio());
+        Socio->setArrC(s.socios[], int posSocio, auxC);
+    }
+    else
+        cout << "Este socio no puede tener mas consultas asociadas";
 }
 
 DtConsulta** verConsultasAntesDeFecha(DtFecha* fecha, string ciSocio, int& cantConsultas) {
@@ -203,6 +215,9 @@ DtConsulta** verConsultasAntesDeFecha(DtFecha* fecha, string ciSocio, int& cantC
 }
 
 void eliminarSocio(string ci) {
+    int i = 0;
+    while (s.socios[i] <= s.tope && s.socios[i]->getCI() != ci)
+        i++;
     
 }
 
