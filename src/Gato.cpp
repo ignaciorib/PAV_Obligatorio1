@@ -8,8 +8,19 @@
 
 Gato::Gato() {}
 
-Gato::Gato(TipoPelo t) {
-    TipoPeloG = t;
+Gato::Gato(string n, float p, int genero, int tP) {
+    Mascota(n, p, genero);
+    switch (tP) {
+        case 1:
+            TipoPeloG = TipoPelo::Corto;
+            break;
+        case 2:
+            TipoPeloG = TipoPelo::Mediano;
+            break;
+        case 3:
+            TipoPeloG = TipoPelo::Largo;
+            break;
+    }
 }
 
 float Gato::obtenerRD() {
