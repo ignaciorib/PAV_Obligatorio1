@@ -5,10 +5,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "Genero.h"
-#include "Socio.h"
-#include "Mascota.h"
-#include "TipoPelo.h"
 #include "RazaPerro.h"
 #include "DtMascota.h"
 
@@ -20,7 +16,9 @@ class DtPerro : public DtMascota {
         bool vacunaCachorro;
     public:
         DtPerro();
-        DtPerro(int, bool);
+        DtPerro(string, int g, float, int p_g, int r, bool);
+        int getRaza();
+        int getVC();
 };
 
 #endif /* DTPERRO_H */
