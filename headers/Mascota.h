@@ -7,7 +7,6 @@
 #include "../headers/Genero.h"
 #include "../headers/Consulta.h"
 
-#include "Socio.h"
 #include "Genero.h"
 
 
@@ -18,7 +17,7 @@ class Mascota {
     private:
         string nombreMsc;
         float peso;
-        int GeneroM;
+        Genero GeneroM;
     public:
         Mascota();
         Mascota(string, float, int);
