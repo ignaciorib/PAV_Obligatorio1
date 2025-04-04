@@ -6,6 +6,7 @@
 
 Consulta::Consulta() {}
 
-Consulta::Consulta(string s) {
+Consulta::Consulta(string s, int d, int m, int a) {
     descripcion = s;
+    fechaIngreso = DtFecha(d, m, a);
 }
