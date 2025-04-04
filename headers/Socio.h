@@ -21,21 +21,23 @@ class Socio{
         Mascota* m[9];
         int topeM;
         
-        Consulta* c[19];
+        Consulta* c[20];
         int topeC;
     public:
         Socio();
         Socio(string, string, int, int, int); //Constructor comun
         string getNombre();
         int getTopeM();
-        Mascota* getMascota();
+        Mascota* getMascota(); ///////////////////////////////profe
+        Mascota* getMascotas();
         int getTopeC();
         Consulta* getConsulta();
         string getCI();
         void setNombre(string);
         void setCI(string);
         void setTopeM();
-        void setArrM(Mascota*);
+        void setArrM(Socio* s[], int i, Mascota*);
+        void setArrC(Socio* s[], int i, Consulta*);
 
 };
 
