@@ -106,17 +106,17 @@ int main () {
     cout << "\n - Peso: " ;
     float p;
     cin >> p;
-    cout << " kg"
+    cout << " kg";
+    cout <<        
             "\n - Ración Diaria: ";
     float rD;
     cin >> rD;
-    ///////////////////////////
-    DtMascota(n, g, p, rD);/////////////////////////////////////////////////////////en funciones???
+    
     cout << " gramos.\n"
             "\nSeleccione el tipo:      0 si es Perro\n"
             "                           1 si es Gato: ";
     int tipoMascot;
-    cin >> tipoMascot;
+    cin >> tipoMascot;                                          //Nos dice el usuario si es perro o gatovich
     if (tipoMascot) {
         cout << 
             "    - Ingrese el tipo de pelo: \n"
@@ -125,7 +125,7 @@ int main () {
             "       3) Largo\n";
         int auxTPelo;
         cin >> auxTPelo;
-        DtGato(auxTPelo);
+        DtGato auxGato = new DtGato(auxTPelo);/////////////////////////////////////
     }
     else {
         " - Tiene vacuna del Cachorro: Si / No\n";///////////////////////////////cambiar
@@ -146,9 +146,14 @@ int main () {
                 "       7) Otro\n";
         int auxRaza;
         cin >> auxRaza;
-        DtPerro(auxRaza, auxBoolVC);
+        DtPerro auxPerro = new DtPerro(auxRaza, auxBoolVC);/////////////////////////
     }
-            
+    
+    ///////////////////////////como implementar la polimorfica       
+    DtMascota auxDtMascota = new DtMascota(n, g, p, rD);/////////////////////////////////////////////////////////en funciones???
+    auxDtMascota->setPerroGato(tipoMascot);
+    
+    
     
         
     
@@ -161,26 +166,32 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         cout << "no hay espacio para mas socios";
     else {
         int i = s.tope;
-        Socio* aux = new Socio(nombre, ci, fechaIngreso::getDia(), fechaIngreso::getMes(), fechaIngreso::getAnio());
-        a[i] = aux;
-        if (tipoMascot)
-            Mascota* auxG = Gato();
-        else
-            Mascota* auxP = Perro(dtMascota::);
+        Socio* aux = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
+        s.socios[i] = aux;
         s.tope++;
-    }
+        if (dtMascota->getPerroGato()){
+            Mascota* aux = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
+        }
+        else
+            Mascota* aux = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
+        Socio->setArrM(aux);
 }
 
 void agregarMascota(string ci, DtMascota* dtMascota) {
-    
-        for(int i = 0; i <= s.tope; i++){
-                if(ci == arr[i]){
-                    Mascota(dtMascota::getNombre(), dtMascota::getPeso(), dtMascota::getGenero());
-                    
-                }else{
-                    
-                }
-        
+    Mascota* aux;
+    int i = 0;
+    while (s.socios[i] <= s.tope && s.socios[i]->getCI() != ci)
+        i++;
+    int j = s.socios[i]->getTopeM();
+    if (j <= 9) {
+        if (dtMascota->getPerroGato())
+            aux = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
+        else
+            aux = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtGenero(), dtMascota->getDtPeso(), dtMascota->getPerroGato());
+        Socio->setArrM(aux);
+    }
+    else
+        cout << "Este socio no puede tener mas mascotas asociadas";
 }
 
 void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
