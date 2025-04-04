@@ -47,7 +47,7 @@ Mascota* Socio::getMascota(Socio s, string nam) { //Devuelva una macota especifi
     }
 }
 
-Mascota* Socio::getMascotas(Socio s) { //Devuelve todas las macotas
+Mascota* Socio::getMascotas(Socio s) { //Devuelve todas las macotas//////////////////////////////profe
     if (s.getTopeM() > 0)
         return m[0];
     else 
@@ -67,6 +67,16 @@ Consulta Socio::getConsulta() {
     
 }
 
+void Socio::setTopeM() {
+    topeM++;
+}
+
+void Socio::setArrM(Mascota* aux) {
+    m[topeM] = aux;
+    topeM++;
+}
+
+/*
 //prueba
 void Socio::agregarMascota(Mascota* mascota){
     if(topeM < 10){
@@ -76,7 +86,7 @@ void Socio::agregarMascota(Mascota* mascota){
     }
 }
 
-/*#include "../headers/Socio.h"
+#include "../headers/Socio.h"
 #include <iostream>
 
 Socio::Socio(std::string nombre, int id) : nombre(nombre), id(id) {}
