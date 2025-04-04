@@ -19,13 +19,19 @@ class DtMascota {
         Genero genero;
         float peso;
         float racionDiaria;
+        int P_G;            //1 es gato, 0 es perro
     public:
         DtMascota();
-        DtMascota(string, int, float, float);
+        DtMascota(string, int, float, int);
         void setNombre(string);
         void setGenero(int);
         void setPeso(float);
-
+        void setPerroGato(int);
+        int getPerroGato();
+        int getDtGenero();
+        float getDtPeso();
+        string getNombreDtMsc();
+        virtual float obtenerDtRD() = 0;
 
 };
 
