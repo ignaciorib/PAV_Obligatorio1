@@ -22,7 +22,7 @@ class DtMascota {
         int P_G;            //1 es gato, 0 es perro
     public:
         DtMascota();
-        DtMascota(string, int, float, int);
+        DtMascota(string, int g, float, int p_g);
         void setNombre(string);
         void setGenero(int);
         void setPeso(float);
