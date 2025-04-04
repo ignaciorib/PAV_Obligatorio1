@@ -18,7 +18,7 @@ class Perro: public Mascota {
         Perro();
         Perro(RazaPerro, bool);
         RazaPerro getRazaP();
-        bool vacu();
+        bool getVacu();
         float obtenerRD();
         ////////~Perro();
 };
