@@ -11,7 +11,8 @@
 
 DtGato::DtGato() {}
 
-DtGato::DtGato(int tP) {
+DtGato::DtGato(string n, int g, float p, int p_g, int tP) {
+    DtMascota(n, g, p, p_g);
     switch (tP) {
         case 1:
             pelo = TipoPelo::Corto;
@@ -23,4 +24,21 @@ DtGato::DtGato(int tP) {
             pelo = TipoPelo::Largo;
             break;
     }
+}
+
+int DtGato::getTipoPelo () {
+    switch (pelo) {
+    case TipoPelo::Corto:
+        return 1;
+        break;
+    case TipoPelo::Mediano:
+        return 2;
+        break;
+    case TipoPelo::Largo:
+        return 3;
+        break;
+    }
+    default: 
+        return 0;
+        break;
 }
