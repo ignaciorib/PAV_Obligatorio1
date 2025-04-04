@@ -5,12 +5,9 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "Genero.h"
-#include "Socio.h"
-#include "Mascota.h"
-#include "TipoPelo.h"
-#include "RazaPerro.h"
 #include "DtMascota.h"
+#include "TipoPelo.h"
+
 
 using namespace std;
 
@@ -19,7 +16,8 @@ class DtGato : public DtMascota {
         TipoPelo pelo;
     public:
         DtGato();
-        DtGato(int);
+        DtGato(string, int g, float, int p_g, int pelo);
+        int getTipoPelo();
 };
 
 #endif /* DTGATO_H */
