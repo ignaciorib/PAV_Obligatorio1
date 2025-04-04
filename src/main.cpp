@@ -211,7 +211,8 @@ void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
 }
 
 DtConsulta** verConsultasAntesDeFecha(DtFecha* fecha, string ciSocio, int& cantConsultas) {
-    
+    //almacenar las consultas por las fechas, de tal manera que la mayor fecha quede en el principio y las mas chicas le siguen
+    //entonces recorremos el arreglo nos posicionamos en la fecha que corresponde y  mostramos las que siguen a la misma
 }
 
 void eliminarSocio(string ci) {
