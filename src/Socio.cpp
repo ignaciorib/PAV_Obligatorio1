@@ -12,7 +12,7 @@ Socio::Socio() {}
 Socio::Socio(string _nombre, string _CI, int d, int m, int a) {
     nombre = _nombre;
     CI = _CI;
-    DtFecha(d, m, a);
+    fechaIng = DtFecha(d, m, a);
 }
 
 string Socio::getNombre(){
@@ -71,9 +71,14 @@ void Socio::setTopeM() {
     topeM++;
 }
 
-void Socio::setArrM(Mascota* aux) {
-    m[topeM] = aux;
-    topeM++;
+void Socio::setArrM(Socio* s[], int i, Mascota* auxM) {
+    s[i].m[s[i].topeM] = auxM;
+    s[i].topeM++;
+}
+
+void Socio::setArrC(Socio* s[], int i, Consulta* auxC) {
+    s[i].c[s[i].topeC] = auxC;
+    s[i].topeC++;
 }
 
 /*
