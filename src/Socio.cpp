@@ -58,7 +58,7 @@ int Socio::getTopeC() {
     return topeC;
 }
 
-Consulta Socio::getConsulta() {
+Consulta* Socio::getConsulta() {
     if(topeC > 0){
         return c[0]; 
     }else{
