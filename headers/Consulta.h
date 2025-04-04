@@ -2,8 +2,6 @@
 #define CONSULTA_H
 
 #include <string>
-#include "../headers/Socio.h"
-#include "../headers/Mascota.h"
 
 using namespace std;
 
