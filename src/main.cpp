@@ -226,6 +226,4 @@ DtMascota** obtenerMascotas(string ci, int& cantMascotas) {
     
 }
 
-void hola(){
-   printf("hola"); 
-}
+
