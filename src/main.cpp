@@ -225,3 +225,7 @@ void eliminarSocio(string ci) {
 DtMascota** obtenerMascotas(string ci, int& cantMascotas) {
     
 }
+
+void hola(){
+   printf("hola"); 
+}
