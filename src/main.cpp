@@ -170,13 +170,16 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         s.socios[posSocio] = auxS;
         s.tope++;
         if (dtMascota->getPerroGato()){
-            DtGato* gato = new dynamic_cast<DtGato>(dtMascota);
-            gato = new Gato(gato->getNombreMsc(), gato->getPeso(), gato->getGenero(), gato->getTipoPelo());///////////////////////
+            DtGato* Dtgato = dynamic_cast<DtGato>(dtMascota);
+            Gato* cat;
+            cat = new Gato(Dtgato->getNombreMsc(), Dtgato->getPeso(), Dtgato->getGenero(), Dtgato->getTipoPelo());///////////////////////
+            
             Socio->setArrM(s.socios[], int posSocio, gato);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
         }
         else {
-            DtPeroo* perro = new dynamic_cast<DtPerro>(dtMascota);
-            perro = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
+            DtPeroo* perro = dynamic_cast<DtPerro>(dtMascota);
+            Perro* dog;
+            dog = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
             Socio->setArrM(s.socios[], int posSocio, perro);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
         }
     }
