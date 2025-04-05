@@ -14,7 +14,7 @@ Mascota::Mascota(string n, float p, int g) {
     if g
         genero = Genero::Macho;
     else
-        genero = Genero::Hambra;
+        genero = Genero::Hembra;
 }
 
 float Mascota::getPeso() {
