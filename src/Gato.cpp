@@ -8,8 +8,8 @@
 
 Gato::Gato() {}
 
-Gato::Gato(string n, float p, int genero, int tP) {
-    Mascota(n, p, genero);
+Gato::Gato(string n, float p, int genero, int tP) : Mascota(n, p, genero) {
+    
     switch (tP) {
         case 1:
             TipoPeloG = TipoPelo::Corto;

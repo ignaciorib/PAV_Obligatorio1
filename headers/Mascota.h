@@ -23,9 +23,10 @@ class Mascota {
         Mascota(string, float, int);
         float getPeso();
         string getNombreMsc();
-        string getGenero();
+        int getGenero();
         virtual float obtenerRD() = 0;
         /////////~Mascota();
+        //virtual ~Mascota
 };
 
 #endif 

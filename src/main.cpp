@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string.h>
 #include <stdio.h>
 #include <stdexcept>
@@ -162,35 +162,35 @@ int main () {
 }
 
 void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* dtMascota) {
-    if (s.tope = MAX_SOCIOS)
-        cout << "no hay espacio para mas socios";
-    else {
-        int posSocio = s.tope;
-        Socio* auxS = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
-        s.socios[posSocio] = auxS;
-        s.tope++;
-        if (dtMascota->getPerroGato()){
-        if (dtMascota->getPerroGato()){
-            DtGato* dtgato = dynamic_cast<DtGato>(dtMascota);
-            Gato* cat;
-            cat = new Gato(dtgato->getNombreDtMsc(), dtgato->getDtPeso(), dtgato->getDtGenero(), dtgato->getTipoPelo())///////////////////////
-            
-            Socio->setArrM(s.socios[], int posSocio, gato);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+        if (s.tope = MAX_SOCIOS){
+                cout << "no hay espacio para mas socios";
+        }else {
+                int posSocio = s.tope;
+                Socio* auxS = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
+                s.socios[posSocio] = auxS;
+                s.tope++;
+                if (dtMascota->getPerroGato()){
+                        if (dtMascota->getPerroGato()){
+                                DtGato* dtgato = dynamic_cast<DtGato>(dtMascota);
+                                Gato* cat;
+                                cat = new Gato(dtgato->getNombreDtMsc(), dtgato->getDtPeso(), dtgato->getDtGenero(), dtgato->getTipoPelo())///////////////////////
+                                Socio->setArrM(s.socios[], int posSocio, gato);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+                        }else {
+                                DtPerro* perro = dynamic_cast<DtPerro>(dtMascota);
+                                Perro* dog;
+                                dog = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
+                                Socio->setArrM(s.socios[], int posSocio, perro);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+                        }
+                }
         }
-        else {
-            DtPerro* perro = dynamic_cast<DtPerro>(dtMascota);
-            Perro* dog;
-            dog = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
-            Socio->setArrM(s.socios[], int posSocio, perro);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
-        }
-    }
 }
 
 void agregarMascota(string ci, DtMascota* dtMascota) {////////////////////////////////////////////////////////////////////////////LEGAL??????????
     Mascota* auxM;
     int posSocio = 0;
-    while (s.socios[posSocio] <= s.tope && s.socios[posSocio]->getCI() != ci)
+    while (s.socios[posSocio] <= s.tope && s.socios[posSocio]->getCI() != ci){
         posSocio++;
+    }
     int j = s.socios[posSocio]->getTopeM();
     if (j <= 9) {
         if (dtMascota->getPerroGato()){
@@ -205,11 +205,14 @@ void agregarMascota(string ci, DtMascota* dtMascota) {//////////////////////////
             dog = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
             Socio->setArrM(s.socios[], int posSocio, perro);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
         }
-    else
+        else{
         //cout << "Este socio no puede tener mas mascotas asociadas";
         throw overflow_error ("Este socio no puede tener mas mascotas asociadas"); 
+        }
+        }
     }
-}
+
+
 
 void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
     int posSocio = 0;
@@ -225,8 +228,8 @@ void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
 }
 
 DtConsulta** verConsultasAntesDeFecha(DtFecha* fecha, string ciSocio, int& cantConsultas) {
-    //almacenar las consultas por las fechas, de tal manera que la mayor fecha quede en el principio y las mas chicas le siguen
-    //entonces recorremos el arreglo nos posicionamos en la fecha que corresponde y  mostramos las que siguen a la misma
+    
+
 }
 
 void eliminarSocio(string ci) {
@@ -239,5 +242,5 @@ void eliminarSocio(string ci) {
 DtMascota** obtenerMascotas(string ci, int& cantMascotas) {
     
 }
-
+*/
 

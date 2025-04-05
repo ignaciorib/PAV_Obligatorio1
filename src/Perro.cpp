@@ -11,8 +11,7 @@
 Perro::Perro() {}
 
 
-Perro::Perro(string n, float p, int genero, int raza, bool v) {
-    Mascota(n, p, genero);
+Perro::Perro(string n, float p, int genero, int raza, bool v) : Mascota(n, p, genero) {
     switch (raza) {
         case 1:
             raza = RazaPerro::labrador;

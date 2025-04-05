@@ -11,10 +11,18 @@ Mascota::Mascota() {}
 Mascota::Mascota(string n, float p, int g) {
     nombreMsc = n;
     peso = p;
+<<<<<<< HEAD
     if g
         GeneroM = Genero::Macho;
     else
         GeneroM = Genero::Hembra;
+=======
+    if (g){
+        GeneroM = Genero::Macho;
+    }else{
+        GeneroM = Genero::Hembra;
+    }
+>>>>>>> adfec1b (.)
 }
 
 float Mascota::getPeso() {
