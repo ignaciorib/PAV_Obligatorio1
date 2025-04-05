@@ -169,13 +169,16 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         Socio* auxS = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
         s.socios[posSocio] = auxS;
         s.tope++;
-        Mascota* auxM;
         if (dtMascota->getPerroGato()){
-            Mascota* auxM = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), );///////////////////////
+            DtGato* gato = new dynamic_cast<DtGato>(dtMascota);
+            gato = new Gato(gato->getNombreMsc(), gato->getPeso(), gato->getGenero(), gato->getTipoPelo());///////////////////////
+            Socio->setArrM(s.socios[], int posSocio, gato);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
         }
-        else
-            Mascota* auxM = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), , );///////////////////////
-        Socio->setArrM(s.socios[], int posSocio, auxM);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+        else {
+            DtPeroo* perro = new dynamic_cast<DtPerro>(dtMascota);
+            perro = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
+            Socio->setArrM(s.socios[], int posSocio, perro);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+        }
     }
 }
 
@@ -187,14 +190,20 @@ void agregarMascota(string ci, DtMascota* dtMascota) {//////////////////////////
     int j = s.socios[posSocio]->getTopeM();
     if (j <= 9) {
         if (dtMascota->getPerroGato()){
-            Mascota* auxM = new Gato(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), );////////
+            DtGato* gato = new dynamic_cast<DtGato>(dtMascota);
+            gato = new Gato(gato->getNombreMsc(), gato->getPeso(), gato->getGenero(), gato->getTipoPelo());///////////////////////
+            Socio->setArrM(s.socios[], int posSocio, gato);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
         }
-        else
-            Mascota* auxM = new Perro(dtMascota->getNombreDtMsc(), dtMascota->getDtPeso(), dtMascota->getDtGenero(), , );////////
-        Socio->setArrM(s.socios[], int posSocio, auxM);
+        else {
+            DtPeroo* perro = new dynamic_cast<DtPerro>(dtMascota);
+            perro = new Perro(perro->getNombreDtMsc(), perro->getDtPeso(), perro->getDtGenero(), perro->getRaza(), perro->getVC());///////////////////////
+            Socio->setArrM(s.socios[], int posSocio, perro);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
+            Socio->setArrM(s.socios[], int posSocio, auxM);
     }
     else
-        cout << "Este socio no puede tener mas mascotas asociadas";
+        //cout << "Este socio no puede tener mas mascotas asociadas";
+        throw overflow_error ("Este socio no puede tener mas mascotas asociadas"); 
+    }
 }
 
 void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
@@ -207,7 +216,7 @@ void ingresarConsulta(string motivo, string ci, DtFecha* fechaConsulta) {
         Socio->setArrC(s.socios[], int posSocio, auxC);
     }
     else
-        cout << "Este socio no puede tener mas consultas asociadas";
+        throw overflow_error ("Este socio no puede tener mas consultas asociadas"); 
 }
 
 DtConsulta** verConsultasAntesDeFecha(DtFecha* fecha, string ciSocio, int& cantConsultas) {
