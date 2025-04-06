@@ -11,8 +11,7 @@
 
 DtPerro::DtPerro() {}
 
-DtPerro::DtPerro(string n, int g, float p, int p_g, int r, bool vC) {
-    DtMascota(n, g, p, p_g);
+DtPerro::DtPerro(string n, int g, float p, int p_g, int r, bool vC) : DtMascota(n, g, p, p_g) {
     switch (r) {
         case 1:
             raza = RazaPerro::labrador;
@@ -101,4 +100,8 @@ void DtPerro::setRaza(int x){
         break;
         default: 
     }
+}
+
+float DtPerro::obtenerRD() {
+    return getDtPeso() * 0,025;
 }

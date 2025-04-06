@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
 #include <iostream>
-=======
-/*#include <iostream>
->>>>>>> fb66fb93adc76bec28e4fbaaef732dac32697cb9
 #include <string.h>
 #include <stdio.h>
 #include <stdexcept>
@@ -97,7 +93,6 @@ int main () {
                 cin >> tipoPelo;
                 dtG->setTipoPelo(tipoPelo);
                 registrarSocio(ci, nombre, dtF, dtG);
-                //DtGato auxGato = new DtGato(auxTPelo);/////////////////////////////////////????
             } else {
                 dtP = dynamic_cast<DtPerro*>(dtM);
                 cout << "\n-¿El cachorro tiene vacunas?\n-0 Sí.\n-1 No.";
@@ -118,52 +113,6 @@ int main () {
             cout << "Opción inválida. Intente nuevamente.\n";
             break;
     }
-
-    cin >> rD;
-    
-    cout << " gramos.\n"
-            "\nSeleccione el tipo:      0 si es Perro\n"
-            "                           1 si es Gato: ";
-    int tipoMascot;
-    cin >> tipoMascot;                                          //Nos dice el usuario si es perro o gatovich
-    if (tipoMascot) {
-        cout << 
-            "    - Ingrese el tipo de pelo: \n"
-            "       1) Corto\n"
-            "       2) Mediano\n"
-            "       3) Largo\n";
-        int auxTPelo;
-        cin >> auxTPelo;
-        DtGato auxGato = new DtGato(auxTPelo);/////////////////////////////////////????
-    }
-    else {
-        " - Tiene vacuna del Cachorro: Si / No\n";///////////////////////////////cambiar
-        string vC;
-        bool auxBoolVC;
-        cin >> vC;
-        if (vC == "Si")
-            auxBoolVC = true;
-        else
-            auxBoolVC = false;
-        cout << "\n  - Ingrese la Raza:"
-                "       1) Labrador\n"
-                "       2) Ovejero\n"
-                "       3) Bulldog\n"
-                "       4) Pitbull\n"
-                "       5) Collie\n"
-                "       6) Pekines\n"
-                "       7) Otro\n";
-        int auxRaza;
-        cin >> auxRaza;
-        DtPerro auxPerro = new DtPerro(auxRaza, auxBoolVC);/////////////////////////
-    }
-    
-    ///////////////////////////como implementar la polimorfica       
-    DtMascota auxDtMascota = new DtMascota(n, g, p, rD);/////////////////////////////////////////////////////////en funciones???
-    auxDtMascota->setPerroGato(tipoMascot);
-    
-    
-    
         
     
     
@@ -178,14 +127,10 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         Socio* auxS = new Socio(nombre, ci, fechaIngreso->getDia(), fechaIngreso->getMes(), fechaIngreso->getAnio());
         s.socios[posSocio] = auxS;
         s.tope++;
-<<<<<<< HEAD
         if (dtMascota->getPerroGato()){
-            //DtGato* Dtgato = dynamic_cast<DtGato>(dtMascota); Lo comento acá, creo que va en el main en el momento que el usuario elige el tipo de animal
-
-=======
+            //DtGato* Dtgato = dynamic_cast<DtGato*>(dtMascota); Lo comento acá, creo que va en el main en el momento que el usuario elige el tipo de animal
         if (dtMascota->getPerroGato()){  ///////////////////hacer una funcion?????????????????
             DtGato* dtgato = dynamic_cast<DtGato>(dtMascota);
->>>>>>> fb66fb93adc76bec28e4fbaaef732dac32697cb9
             Gato* cat;
             cat = new Gato(dtgato->getNombreDtMsc(), dtgato->getDtPeso(), dtgato->getDtGenero(), dtgato->getTipoPelo());///////////////////////
             
@@ -198,7 +143,7 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
             s.socios[posSocio]->setArrM(s.socios, posSocio, dog);  //agrega el aux en la posicion topeM del socio i y suma 1 al topeM
         }
     }
-}
+}}
 
 void agregarMascota(string ci, DtMascota* dtMascota) {////////////////////////////////////////////////////////////////////////////LEGAL??????????
     int posSocio = 0;

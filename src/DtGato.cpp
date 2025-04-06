@@ -11,8 +11,7 @@
 
 DtGato::DtGato() {}
 
-DtGato::DtGato(string n, int g, float p, int p_g, int tP) {
-    DtMascota(n, g, p, p_g);
+DtGato::DtGato(string n, int g, float p, int p_g, int tP) : DtMascota(n, g, p, p_g) {
     switch (tP) {
         case 1:
             pelo = tipoPelo::Corto;
@@ -55,3 +54,8 @@ void DtGato::setTipoPelo(int x){ // por que a mi me sirve el punto y coma pero a
         default: 
         }
 }
+
+float DtGato::obtenerRD() {
+    return getDtPeso() * 0,015;
+}
+

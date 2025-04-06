@@ -29,6 +29,7 @@ class DtMascota {
         int getPerroGato();
         int getDtGenero();
         float getDtPeso();
+        virtual float obtenerRD() = 0;
         string getNombreDtMsc();
         //virtual float obtenerDtRD() = 0;
 

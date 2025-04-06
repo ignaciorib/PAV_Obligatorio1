@@ -12,7 +12,7 @@ using namespace std;
 
 class Gato: public Mascota {
     private:
-        TipoPelo TipoPeloG;
+        tipoPelo TipoPeloG;
     public:
         Gato();
         Gato(string, float, int , int);
