@@ -6,6 +6,8 @@
 
 #include "DtMascota.h"
 #include "DtConsulta.h"
+#include "DtPerro.h"
+#include "DtGato.h"
 
 
 using namespace std;
@@ -27,12 +29,12 @@ class Socio{
         Socio(string, string, int, int, int); //Constructor comun
         string getNombre();
         int getTopeM();
-        Mascota* getMascota(Mascota* m[], string nam); ///////////////////////////////profe
+        Mascota* getMascota(Mascota* mas[], string nam); ///////////////////////////////profe
         Mascota* getMascotas();
         int getTopeC();
         Consulta* getConsulta();
-        DtConsulta* obtenerArrC(Socio* s[], int posSocio, DtFecha f, int& cont);
-        DtMascota* obtenerArrM(Socio* s[], int posSocio, int &cantMascotas);
+        DtConsulta** obtenerArrC(Socio* s[], int posSocio, DtFecha* f, int& cont);
+        DtMascota** obtenerArrM(Socio* s[], int posSocio, int &cantMascotas);
         string getCI();
         void setNombre(string);
         void setCI(string);

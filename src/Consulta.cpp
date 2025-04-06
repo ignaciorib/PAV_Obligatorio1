@@ -8,8 +8,7 @@ Consulta::Consulta() {}
 
 Consulta::Consulta(string s, int d, int m, int a) {
     descripcion = s;
-    fechaIngreso = DtFecha(d, m, a);
-    fechaConsulta = DtFecha(d, m, a);
+    DtFecha* fechaConsulta = new DtFecha(d, m, a);
 }
 
 Consulta::Consulta(Consulta &c) {
@@ -17,7 +16,7 @@ Consulta::Consulta(Consulta &c) {
     fechaConsulta = c.fechaConsulta;
 }
 
-DtFecha Consulta::getFechaConsulta(){ //////////////////////
+DtFecha* Consulta::getFechaConsulta(){ //////////////////////
     return fechaConsulta;
 }
 

@@ -4,6 +4,8 @@
 #include "../headers/Mascota.h"
 #include "../headers/Socio.h"
 #include "../headers/DtFecha.h"
+#include "../headers/DtPerro.h"
+#include "../headers/DtGato.h"
 
 
 
@@ -35,7 +37,7 @@ int Socio::getTopeM() {
     return topeM;
 }
 
-Mascota* Socio::getMascota(Socio s, string nam) { //Devuelva una macota especifica
+Mascota* Socio::getMascota(Mascota* s[], string nam) { //Devuelva una macota especifica
     int i = 0;
     while (m[i].getNombre() != nam) {
         i++;
@@ -93,7 +95,7 @@ void Socio::delS(Socio* s[], int i) {
     delete s[i];
 }
 
-DtConsulta* Socio::obtenerArrC(Socio* s[], int posSocio, DtFecha f, int &cont) {
+DtConsulta** Socio::obtenerArrC(Socio* s[], int posSocio, DtFecha* f, int &cont) {
     for (int iter = 0; iter <= s[posSocio]->topeC; iter++) {
         Consulta* auxDescartable = new Consulta(*s[posSocio]->c[iter]);
         if (DtFecha::comp(auxDescartable->getFechaConsulta(), f)) {
@@ -117,7 +119,7 @@ DtConsulta* Socio::obtenerArrC(Socio* s[], int posSocio, DtFecha f, int &cont) {
         return NULL;
 }
 
-DtMascota* Socio::obtenerArrM(Socio* s[], int posSocio, int &cont) {
+DtMascota** Socio::obtenerArrM(Socio* s[], int posSocio, int &cont) {
     for (int iter = 0; iter <= s[posSocio]->topeM; iter++) {
         cont++;
     }
