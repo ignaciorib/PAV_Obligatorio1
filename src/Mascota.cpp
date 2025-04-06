@@ -40,6 +40,10 @@ int Mascota::getGenero() {
         return 0;
 }
 
+bool Mascota::getPerroGato() {
+    return P_G;
+}
+
 
 //virtual float obtenerRD()
 
