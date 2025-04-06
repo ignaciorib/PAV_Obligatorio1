@@ -16,6 +16,7 @@ class Gato: public Mascota {
     public:
         Gato();
         Gato(string, float, int , int);
+        int getTipoPelo();
         float obtenerRD();
         /////////~Gato();
 };
