@@ -6,10 +6,7 @@
 #include <stdbool.h>
 
 #include "Genero.h"
-#include "Socio.h"
-#include "Mascota.h"
-#include "TipoPelo.h"
-#include "RazaPerro.h"
+
 
 using namespace std;
 
@@ -23,6 +20,7 @@ class DtMascota {
     public:
         DtMascota();
         DtMascota(string, int g, float, int p_g);
+        
         void setNombre(string);
         void setGenero(int);
         void setPeso(float);
@@ -31,7 +29,7 @@ class DtMascota {
         int getDtGenero();
         float getDtPeso();
         string getNombreDtMsc();
-        virtual float obtenerDtRD() = 0;
+        //virtual float obtenerDtRD() = 0;
 
 };
 
