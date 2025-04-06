@@ -23,6 +23,23 @@ Gato::Gato(string n, float p, int genero, int tP) : Mascota(n, p, genero) {
     }
 }
 
+int Gato::getTipoPelo () {
+    switch (TipoPeloG) {
+        case TipoPelo::Corto:
+            return 1;
+            break;
+        case TipoPelo::Mediano:
+            return 2;
+            break;
+        case TipoPelo::Largo:
+            return 3;
+            break;
+        default:
+            return 0;
+            break;
+    }
+}
+
 float Gato::obtenerRD() {
     return getPeso() * 0,015;
 }
