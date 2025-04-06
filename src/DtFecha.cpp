@@ -37,4 +37,16 @@ int DtFecha::getDia() {
     return dia;
 }
 
+void DtFecha::setDia(int x){
+    dia = x;
+}
+
+void DtFecha::setMes(int x){
+    mes = x;
+}
+
+void DtFecha::setAnio(int x){
+    anio= x;
+}
+
 ////////DtFecha DtFecha::

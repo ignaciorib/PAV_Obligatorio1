@@ -13,11 +13,12 @@ using namespace std;
 
 class DtGato : public DtMascota {
     private:
-        TipoPelo pelo;
+        tipoPelo pelo;
     public:
         DtGato();
         DtGato(string, int g, float, int p_g, int pelo);
         int getTipoPelo();
+        void setTipoPelo(int);
 };
 
 #endif /* DTGATO_H */

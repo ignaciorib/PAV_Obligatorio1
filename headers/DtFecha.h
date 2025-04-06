@@ -18,6 +18,9 @@ class DtFecha{
         int getAnio();
         int getMes();
         int getDia();
+        void setDia(int);
+        void setMes(int);
+        void setAnio(int);
         //////////////////////////////////DtFecha getFecha();??????????????????
         ~DtFecha();
 };

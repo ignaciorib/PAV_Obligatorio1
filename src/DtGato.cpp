@@ -15,30 +15,43 @@ DtGato::DtGato(string n, int g, float p, int p_g, int tP) {
     DtMascota(n, g, p, p_g);
     switch (tP) {
         case 1:
-            pelo = TipoPelo::Corto;
+            pelo = tipoPelo::Corto;
             break;
         case 2:
-            pelo = TipoPelo::Mediano;
+            pelo = tipoPelo::Mediano;
             break;
         case 3:
-            pelo = TipoPelo::Largo;
+            pelo = tipoPelo::Largo;
             break;
     }
 }
 
 int DtGato::getTipoPelo () {
     switch (pelo) {
-    case TipoPelo::Corto:
+    case tipoPelo::Corto:
         return 1;
         break;
-    case TipoPelo::Mediano:
+    case tipoPelo::Mediano:
         return 2;
         break;
-    case TipoPelo::Largo:
+    case tipoPelo::Largo:
         return 3;
         break;
-    }
     default: 
-        return 0;
+    }
+}
+
+void DtGato::setTipoPelo(int x){ // por que a mi me sirve el punto y coma pero arriba no(?)
+    switch (x) {
+        case 1:
+        pelo = tipoPelo::Corto;
         break;
+        case 2:
+        pelo = tipoPelo::Mediano;
+        break;
+        case 3:
+        pelo = tipoPelo::Largo;
+        break;
+        default: 
+        }
 }

@@ -60,3 +60,7 @@ float DtMascota::getDtPeso() {
 string DtMascota::getNombreDtMsc(){
     return nombre;
 }
+
+void DtMascota::setRacionDiaria(float racionDiaria){
+    racionDiaria = racionDiaria;
+}

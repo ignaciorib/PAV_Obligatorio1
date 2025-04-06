@@ -68,3 +68,37 @@ int DtPerro::getRaza() {
 int DtPerro::getVC() {
     return vacunaCachorro;
 }
+
+void DtPerro::setVc(int x){
+    if (x == 0)
+        vacunaCachorro == true;
+    else
+        vacunaCachorro == false; 
+}
+
+void DtPerro::setRaza(int x){
+    switch (x) {
+        case 1:
+        raza = RazaPerro::labrador;
+        break;
+        case 2:
+        raza = RazaPerro::ovejero;
+        break;
+        case 3:
+        raza = RazaPerro::bulldog;
+        break;
+        case 4:
+        raza = RazaPerro::pitbull;
+        break;
+        case 5:
+        raza = RazaPerro::collie;
+        break;
+        case 6:
+        raza = RazaPerro::pekines;
+        break;
+        case 7:
+        raza = RazaPerro::otro;
+        break;
+        default: 
+    }
+}

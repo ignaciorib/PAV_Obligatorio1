@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
@@ -38,9 +39,7 @@ DtMascota** obtenerMascotas(string ci, int& cantMascotas);
 
 int main () {
     s.tope = 0;
-    
-    
-    
+      
     cout << "Bienvenido! \n"
             "Elija la opcion: \n"
             "   1) Registrar socio\n"
@@ -53,63 +52,69 @@ int main () {
             "Opcion: ";
     int opcion;
     cin >> opcion;
-    switch(opcion){
+    string ci, nombre, nombreMascota;
+    int edadMascota, generoMascota, tipoMascota, tipoPelo, vacunas, raza, dia, mes, anio;
+    float pesoMascota;
+    DtFecha* dtF;
+    DtMascota* dtM;
+    DtGato* dtG;
+    DtPerro* dtP;
+    switch (opcion){
         case 1:
-            string ci, nombre;
-            int dia, mes, anio;
-            string ci, nombre, nombreMascota, tipoMascota;
-            int edadMascota;
-
+            cout << "\nPara comenzar primero indique la fecha del día de hoy, comenzando por el día: (--/xx/xxxx) ";
+            cin >> dia;
+            cout << "\nA continuación indique el mes: (xx/--/xxxx) ";
+            cin >> mes;
+            cout << "\nPara finalizar indique el año: (xx/xx/----)";
+            cin >> anio;
+            dtF->setDia(dia);
+            dtF->setMes(mes);
+            dtF->setAnio(anio);
             cout << "Ingrese CI del socio: ";
             cin >> ci;
             cout << "Ingrese Nombre del socio: ";
-            cin.ignore();  // Para evitar problemas con getline
-            getline(std::cin, nombre);
-
-            cout << "Ingrese Nombre de la mascota: ";
-            getline(cin, nombreMascota);
-            cout << "Ingrese Edad de la mascota: ";
-            cin >> edadMascota;
-            cout << "Ingrese Tipo de mascota (Perro, Gato, etc.): ";
-            cin.ignore();
-            getline(cin, tipoMascota);
-
-            // Crear el objeto DtMascota con los datos ingresados
-            DtMascota dtMascota(nombreMascota, edadMascota, tipoMascota);
-
-            // Registrar al socio con su mascota (sin devolver un puntero)
-            registrarSocio(ci, nombre, dtMascota);
+            cin >> nombre;
+            cout << "\nA continuación ingrese los datos de su mascota \n";
+            cout << "Nombre: ";
+            cin >> nombreMascota;
+            dtM-> setNombre(nombreMascota);
+            cout << "\nIndique el número que corresponda al sexo de su mascota: \n-0 si es hembra.\n-1 si es macho.";
+            cin >> generoMascota;
+            dtM->setGenero(generoMascota);
+            cout << "\nPeso: ";
+            cin >> pesoMascota;
+            dtM->setPeso(pesoMascota);
+            dtM->setRacionDiaria(0); //Seteamos la racion diaria en 0
+            cout << "\nIndique el número que corresponda al tipo de su mascota: \n-0 si es perro.\n-1 si es gato. ";
+            cin >> tipoMascota;
+            if (tipoMascota) {
+                dtG = dynamic_cast<DtGato*>(dtM); //gepeto me recomendó usar un *, sin el puntero me sale error
+                cout << "\n-Ingrese el tipo de pelo:\n-1 Corto\n-2 Mediano\n-3 Largo\n";
+                cin >> tipoPelo;
+                dtG->setTipoPelo(tipoPelo);
+                registrarSocio(ci, nombre, dtF, dtG);
+                //DtGato auxGato = new DtGato(auxTPelo);/////////////////////////////////////????
+            } else {
+                dtP = dynamic_cast<DtPerro*>(dtM);
+                cout << "\n-¿El cachorro tiene vacunas?\n-0 Sí.\n-1 No.";
+                cin >> vacunas;
+                if (vacunas == 0)
+                    dtP->setVc(0);
+                else
+                    dtP->setVc(1);
+                cout << "\nSeleccione la raza:\n1- Labrador\n2- Ovejero\n3- Bulldog\n4- Pitbull\n5- Collie\n6- Pekines\n7- Otro";
+                cin >> raza;
+                dtP->setRaza(raza);
+                registrarSocio(ci, nombre, dtF, dtP);
+            }
             break;
-
-            //void registrarSocio(string ci, string nombre, DtMascota& dtMascota);
-        case 0:
-            cout << "Saliendo del programa...\n";
-            break;
-
+        case 2:
+            //Vale me ha dado sueño me quedan pendientes los otros menus, igual siento que el de agregar socio era le más largo, los otros easy peasyy
         default:
             cout << "Opción inválida. Intente nuevamente.\n";
             break;
     }
 
-
-
-
-    cout << "\nA continuación ingrese los datos de su mascota \n"
-            " - Nombre: ";
-    string n;
-    cin >> n;
-    cout << 
-            "\nSeleccione el género:    0 si es hembra\n"
-            "                           1 si es macho: ";
-    int g;
-    cin >> g;
-    cout << "\n - Peso: " ;
-    float p;
-    cin >> p;
-    cout << " kg";
-    cout <<        
-            "\n - Ración Diaria: ";
-    float rD;
     cin >> rD;
     
     cout << " gramos.\n"
@@ -125,7 +130,7 @@ int main () {
             "       3) Largo\n";
         int auxTPelo;
         cin >> auxTPelo;
-        DtGato auxGato = new DtGato(auxTPelo);/////////////////////////////////////
+        DtGato auxGato = new DtGato(auxTPelo);/////////////////////////////////////????
     }
     else {
         " - Tiene vacuna del Cachorro: Si / No\n";///////////////////////////////cambiar
@@ -170,7 +175,8 @@ void registrarSocio(string ci, string nombre, DtFecha* fechaIngreso, DtMascota* 
         s.socios[posSocio] = auxS;
         s.tope++;
         if (dtMascota->getPerroGato()){
-            DtGato* Dtgato = dynamic_cast<DtGato>(dtMascota);
+            //DtGato* Dtgato = dynamic_cast<DtGato>(dtMascota); Lo comento acá, creo que va en el main en el momento que el usuario elige el tipo de animal
+
             Gato* cat;
             cat = new Gato(Dtgato->getNombreMsc(), Dtgato->getPeso(), Dtgato->getGenero(), Dtgato->getTipoPelo());///////////////////////
             

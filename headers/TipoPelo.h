@@ -1,7 +1,7 @@
 #ifndef TIPOPELO_H
 #define TIPOPELO_H
 
-enum TipoPelo {
+enum tipoPelo {
     Corto,
     Mediano,
     Largo

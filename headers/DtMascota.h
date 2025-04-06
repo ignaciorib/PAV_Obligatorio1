@@ -26,6 +26,7 @@ class DtMascota {
         void setNombre(string);
         void setGenero(int);
         void setPeso(float);
+        void setRacionDiaria(float);
         void setPerroGato(int);
         int getPerroGato();
         int getDtGenero();

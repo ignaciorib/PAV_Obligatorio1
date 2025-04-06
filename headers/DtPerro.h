@@ -19,6 +19,8 @@ class DtPerro : public DtMascota {
         DtPerro(string, int g, float, int p_g, int r, bool);
         int getRaza();
         int getVC();
+        void setVc(int);
+        void setRaza(int);
 };
 
 #endif /* DTPERRO_H */
