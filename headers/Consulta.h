@@ -12,10 +12,13 @@ using namespace std;
 class Consulta {
     private:
         string descripcion;
-        DtFecha fechaIngreso;
+        DtFecha fechaConsulta;
     public:
         Consulta();
         Consulta(string, int, int, int);
+        Consulta(Consulta&);
+        DtFecha getFechaConsulta();
+        string getMotivo();
         //void mostrarInfo();
 };
 

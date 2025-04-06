@@ -8,8 +8,8 @@
 
 Gato::Gato() {}
 
-Gato::Gato(string n, float p, int genero, int tP) {
-    Mascota(n, p, genero);
+Gato::Gato(string n, float p, int genero, int tP) : Mascota(n, p, genero) {
+    
     switch (tP) {
         case 1:
             TipoPeloG = TipoPelo::Corto;
@@ -19,6 +19,23 @@ Gato::Gato(string n, float p, int genero, int tP) {
             break;
         case 3:
             TipoPeloG = TipoPelo::Largo;
+            break;
+    }
+}
+
+int Gato::getTipoPelo () {
+    switch (TipoPeloG) {
+        case TipoPelo::Corto:
+            return 1;
+            break;
+        case TipoPelo::Mediano:
+            return 2;
+            break;
+        case TipoPelo::Largo:
+            return 3;
+            break;
+        default:
+            return 0;
             break;
     }
 }

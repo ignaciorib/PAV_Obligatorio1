@@ -21,6 +21,7 @@ class DtFecha{
         void setDia(int);
         void setMes(int);
         void setAnio(int);
+        bool comp(DtFecha*, DtFecha*);
         //////////////////////////////////DtFecha getFecha();??????????????????
         ~DtFecha();
 };
