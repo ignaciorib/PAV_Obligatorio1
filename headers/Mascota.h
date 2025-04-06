@@ -18,12 +18,14 @@ class Mascota {
         string nombreMsc;
         float peso;
         Genero GeneroM;
+        bool P_G;
     public:
         Mascota();
         Mascota(string, float, int);
         float getPeso();
         string getNombreMsc();
         int getGenero();
+        bool getPerroGato();
         virtual float obtenerRD() = 0;
         /////////~Mascota();
         //virtual ~Mascota
