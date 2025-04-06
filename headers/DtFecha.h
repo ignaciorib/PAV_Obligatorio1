@@ -18,6 +18,7 @@ class DtFecha{
         int getAnio();
         int getMes();
         int getDia();
+        bool comp(DtFecha*, DtFecha*);
         //////////////////////////////////DtFecha getFecha();??????????????????
         ~DtFecha();
 };
