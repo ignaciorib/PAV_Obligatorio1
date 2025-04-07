@@ -9,7 +9,7 @@
 DtConsulta::DtConsulta() {}
 
 DtConsulta::DtConsulta(DtFecha &dF, string m) {
-    fechaConsulta = dF;
+    fechaConsulta = new DtFecha(dF->getDia(), dF->getMes(), dF->getAnio());
     motivo = m;
 }
 
