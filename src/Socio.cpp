@@ -1,11 +1,7 @@
 #include <cstdlib>
 #include <stdlib.h>
 
-#include "../headers/Mascota.h"
 #include "../headers/Socio.h"
-#include "../headers/DtFecha.h"
-#include "../headers/DtPerro.h"
-#include "../headers/DtGato.h"
 
 
 
@@ -14,7 +10,9 @@ Socio::Socio() {}
 Socio::Socio(string _nombre, string _CI, int d, int m, int a) {
     nombre = _nombre;
     CI = _CI;
-    fechaIng = DtFecha(d, m, a);
+    fechaIng = new DtFecha(d, m, a);
+    topeM = 0;
+    topeC = 0;
 }
 
 string Socio::getNombre(){
@@ -96,71 +94,82 @@ void Socio::delS(Socio* s[], int i) {
 }
 
 DtConsulta** Socio::obtenerArrC(Socio* s[], int posSocio, DtFecha* f, int &cont) {
-    for (int iter = 0; iter <= s[posSocio]->topeC; iter++) {
-        Consulta* auxDescartable = new Consulta(*s[posSocio]->c[iter]);
-        if (DtFecha::comp(auxDescartable->getFechaConsulta(), f)) {
+    for (int iter = 0; iter < s[posSocio]->topeC; iter++) {
+        cout << "\ngood1.3";
+        if (comp(s[posSocio]->c[iter]->getFechaConsulta(), f)) {
             cont++;
+            cout << "\ngood1.1";
         }
-        delete auxDescartable;
     }
     if (cont > 0) {
-        DtConsulta* dtc[cont];
-        for (int iter = 0; iter <= cont; iter++) {
-            Consulta* auxDescartable = new Consulta(*s[posSocio]->c[iter]);
-            if (DtFecha::comp(auxDescartable->getFechaConsulta(), f)) {
-                DtConsulta auxPosta = new DtConsulta(auxDescartable->getMotivo(), auxDescartable->getFechaConsulta());
-                dtc[iter] = auxPosta;
+        DtConsulta** result = new DtConsulta*[cont];
+        for (int iter = 0; iter < s[posSocio]->topeC; iter++) {
+            if (comp(s[posSocio]->c[iter]->getFechaConsulta(), f)) {
+                result[iter] = new DtConsulta(s[posSocio]->c[iter]->getFechaConsulta(), s[posSocio]->c[iter]->getMotivo());
+                cout << "\ngood1.2";
             }
-            delete auxDescartable;
         }
-        return dtc;
+        return result;
     }
     else
         return NULL;
 }
 
 DtMascota** Socio::obtenerArrM(Socio* s[], int posSocio, int &cont) {
-    for (int iter = 0; iter <= s[posSocio]->topeM; iter++) {
-        cont++;
-    }
+    cont = s[posSocio]->topeM;
     if (cont > 0) {
-        DtMascota* dtm[cont];
-        for (int iter = 0; iter <= cont; iter++) {
-            if (s[posSocio].m[iter]->getPerroGato()){
-                Gato* gato = dynamic_cast<Gato>(s[posSocio].m[iter]);
-                DtGato* cat;
-                cat = new DtGato(gato->getNombreMsc(), gato->getPeso(), gato->getGenero(), gato->getTipoPelo());
-                dtm[iter] = cat;
+        DtMascota** result = new DtMascota*[cont];
+        for (int iter = 0; iter < cont; iter++) {
+            if (s[posSocio]->m[iter]->getPerroGato()){
+                Gato* gato = dynamic_cast<Gato*>(s[posSocio]->m[iter]);
+                result[iter] = new DtGato(gato->getNombreMsc(), gato->getPeso(), gato->getGenero(), gato->getPerroGato(), gato->getTipoPelo());
+
             }
             else {
-                Perro* perro = dynamic_cast<Perro>(s[posSocio].m[iter]);
-                DtPerro* dog;
-                dog = new DtPerro(perro->getNombreMsc(), perro->getPeso(), perro->getGenero(), perro->getRaza(), perro->getVacu());///////////////////////
-                dtm[iter] = dog;
+                Perro* perro = dynamic_cast<Perro*>(s[posSocio]->m[iter]);
+                result[iter] = new DtPerro(perro->getNombreMsc(), perro->getPeso(), perro->getGenero(), perro->getPerroGato(), perro->getRaza(), perro->getVacu());
             }
         }
-        return dtm;
+        return result;
     }
     else
         return NULL;
 }
 
-/*
-//prueba
-void Socio::agregarMascota(Mascota* mascota){
-    if(topeM < 10){
-        m[topeM++] = mascota;
-    }else{
-        throw overflow_error("No se pueden agregar mas mascotas."); //////////verificar
-    }
+DtFecha* Socio::getDtFecha() {
+    return fechaIng;
 }
 
-#include "../headers/Socio.h"
-#include <iostream>
+bool Socio::comp(DtFecha* f1, DtFecha* f2) { ///////////////////////////////
+    if (f1 == nullptr || f2 == nullptr)
+        return false;  // O lanzar excepción si preferís
 
-Socio::Socio(std::string nombre, int id) : nombre(nombre), id(id) {}
+    if (f1->getAnio() < f2->getAnio())
+        return true;
+    else if (f1->getAnio() > f2->getAnio())
+        return false;
 
-void Socio::mostrarInfo() {
-    std::cout << "Socio: " << nombre << ", ID: " << id << std::endl;
+    // Si los años son iguales, comparar meses
+    if (f1->getMes() < f2->getMes())
+        return true;
+    else if (f1->getMes() > f2->getMes())
+        return false;
+
+    // Si los meses también son iguales, comparar días
+    return f1->getDia() < f2->getDia();
+    /*
+    if (f1->getAnio() > f2->getAnio())
+        return true;
+    else if (f1->getAnio() < f2->getAnio())
+        return false;
+    else if (f1->getMes() > f2->getMes())
+        return true;
+    else if (f1->getMes() < f2->getMes())
+        return false;
+    else if (f1->getDia() > f2->getDia())
+        return true;
+    else if (f1->getDia() < f2->getDia())
+        return false;
+    else
+        return false;*/
 }
-*/
