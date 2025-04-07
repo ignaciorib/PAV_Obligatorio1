@@ -19,6 +19,7 @@ class DtGato : public DtMascota {
         DtGato(string, int g, float, int p_g, int pelo);
         int getTipoPelo();
         void setTipoPelo(int);
+        void mostrarInfDtGato();
         float obtenerRD();
 };
 
