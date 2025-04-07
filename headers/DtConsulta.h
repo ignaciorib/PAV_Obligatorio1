@@ -11,11 +11,14 @@ using namespace std;
 
 class DtConsulta {
     private:
-        DtFecha fechaConsulta;
+        DtFecha* fechaConsulta;
         string motivo;
     public:
         DtConsulta();
         DtConsulta(DtFecha, string);
+        DtFecha* getFechaDtConsulta();
+        string getDtMotivo();
+        void mostrarDtC();
 };
 
 #endif /* DTCONSULTA_H */
