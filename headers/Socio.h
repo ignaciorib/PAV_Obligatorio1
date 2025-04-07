@@ -17,7 +17,7 @@ class Socio{
     private:
         string nombre;
         string CI;
-        DtFecha fechaIng;
+        DtFecha* fechaIng;
         
         Mascota* m[9];
         int topeM;
@@ -44,7 +44,7 @@ class Socio{
         void delM(Socio* s[], int i, int j);
         void delC(Socio* s[], int i, int k);
         void delS(Socio* s[], int i);
-
+        bool comp(DtFecha*, DtFecha*);
 };
 
 
