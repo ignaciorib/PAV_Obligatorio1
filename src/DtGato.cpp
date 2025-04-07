@@ -3,10 +3,6 @@
 #include <iostream>
 #include <string.h>
 
-#include "../headers/Genero.h"
-#include "../headers/DtMascota.h"
-#include "../headers/RazaPerro.h"
-#include "../headers/DtPerro.h"
 #include "../headers/DtGato.h"
 
 DtGato::DtGato() {}
@@ -59,3 +55,22 @@ float DtGato::obtenerRD() {
     return getDtPeso() * 0,015;
 }
 
+void DtGato::mostrarInfDtGato() {
+    cout << "\nNombre: " << getNombreDtMsc() <<
+            "\nTipo: Gato"
+            "\nGenero: " << getDtGenero() <<
+            "\nPeso: " << getDtPeso() <<
+            " kg\nRacion diaria: " << obtenerDtRD() <<
+            " g\nTipo de pelo: ";
+    switch (getTipoPelo()) {
+        case 1:
+            cout << "Corto";
+            break;
+        case 2:
+            cout << "Mediano";
+            break;
+        case 3:
+            cout << "Largo";
+            break;
+    }
+}
