@@ -21,6 +21,7 @@ class DtPerro : public DtMascota {
         int getVC();
         void setVc(int);
         void setRaza(int);
+        void mostrarInfDtPerro();
         float obtenerRD();
         
 };
