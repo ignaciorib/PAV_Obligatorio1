@@ -3,9 +3,6 @@
 #include <iostream>
 #include <string.h>
 
-#include "../headers/Genero.h"
-#include "../headers/DtMascota.h"
-#include "../headers/RazaPerro.h"
 #include "../headers/DtPerro.h"
 
 
@@ -103,5 +100,21 @@ void DtPerro::setRaza(int x){
 }
 
 float DtPerro::obtenerRD() {
+    return getDtPeso() * 0,025;
+}
+
+void DtPerro::mostrarInfDtPerro() {
+    cout << "\nNombre: " << getNombreDtMsc() <<
+            "\nTipo: Perro"
+            "\nGenero: " << getDtGenero() <<
+            "\nPeso: " << getDtPeso() <<
+            " kg\nRacion diaria: " << obtenerDtRD();
+    if (getVC())
+        cout << "\nTiene la vacuna de cachorro";
+    else
+        cout << "\nNo tiene la vacuna de cachorro";
+}
+
+float DtPerro::obtenerDtRD() {
     return getDtPeso() * 0,025;
 }
