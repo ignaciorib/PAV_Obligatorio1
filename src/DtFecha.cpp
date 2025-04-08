@@ -30,3 +30,7 @@ int DtFecha::getMes() {
 int DtFecha::getDia() {
     return dia;
 }
+
+DtFecha::~DtFecha() {
+    
+}
