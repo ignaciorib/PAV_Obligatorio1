@@ -71,3 +71,7 @@ int Perro::getRaza() {
 bool Perro::getVacu() {
     return vacunaCachorro;
 }
+
+Perro::~Perro(){
+    //destructor vacio, para guiar al compilador en el borrado de la herencia
+}
