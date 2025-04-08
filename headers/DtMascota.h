@@ -26,7 +26,7 @@ class DtMascota {
         float getDtPeso();
         string getNombreDtMsc();
         virtual float obtenerDtRD() = 0;
-        
+        virtual ~DtMascota();
 
 };
 
