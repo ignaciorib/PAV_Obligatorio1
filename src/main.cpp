@@ -94,6 +94,7 @@ int main () {
                     cin >> tipoPelo;
                     DtGato* dtG = new DtGato(nombreMascota, generoMascota, pesoMascota, tipoMascota, tipoPelo);
                     registrarSocio(ci, nombre, dtF, dtG);
+			delete dtG;
                 } else {
                     cout << "\n-¿El cachorro tiene vacunas?\n  -0 Sí.\n  -1 No.\n";
                     cin >> vacunas;
@@ -106,6 +107,7 @@ int main () {
                     cin >> raza;
                     DtPerro* dtP = new DtPerro(nombreMascota, generoMascota, pesoMascota, tipoMascota, raza, auxV);
                     registrarSocio(ci, nombre, dtF, dtP);
+			delete dtP;
                 }
                 break;
             case 2:
@@ -126,6 +128,7 @@ int main () {
                         cin >> tipoPelo;
                         DtGato* dtG = new DtGato(nombreMascota, generoMascota, pesoMascota, tipoMascota, tipoPelo);
                         agregarMascota(ci, dtG);
+			    delete dtG;
                     } else {
                         cout << "\n-¿El cachorro tiene vacunas?\n  -1 Sí.\n  -0 No.\n";
                         cin >> vacunas;
@@ -138,6 +141,7 @@ int main () {
                         cin >> raza;
                         DtPerro* dtP = new DtPerro(nombreMascota, generoMascota, pesoMascota, tipoMascota, raza, auxV);
                         agregarMascota(ci, dtP);
+			    delete dtP;
                     }
                     cout << "\nLa mascota se ha agregado exitosamente\n";
                 }catch(const invalid_argument &S){
@@ -169,7 +173,6 @@ int main () {
                 }catch(const overflow_error& c){ //exepcion si el socio tiene 20 consultas
                     cout << "Error:" << c.what() << endl;
                 }
-                //ingresarConsulta(motivo, ci, dtF);
                 break;
             case 4:
                 cout << "\nIngrese CI del socio: ";
@@ -200,8 +203,6 @@ int main () {
             case 6:
                 cout << "\nIngrese CI del socio: ";
                 cin >> ci;
-                /*DtMascota** auxM;
-                auxM = obtenerMascotas(ci, cantMascotas);*/
                 try{
                     DtMascota** auxM;
                     auxM = obtenerMascotas(ci, cantMascotas);
