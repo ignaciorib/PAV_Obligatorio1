@@ -37,12 +37,6 @@ int Socio::getTopeC() {
 void Socio::setArrM(Socio* s[], int i, Mascota* auxM) {
     s[i]->m[s[i]->topeM] = auxM;
     s[i]->topeM++;
-    for (int g = 0; g < topeM; g++) {
-        cout << "\n\n" << s[i]->m[g]->getGenero() <<
-                "  " << s[i]->m[g]->getPeso() <<
-                "  " << s[i]->m[g]->obtenerRD() <<
-                "\n";
-    }
 }
 
 void Socio::setArrC(Socio* s[], int i, Consulta* auxC) {
