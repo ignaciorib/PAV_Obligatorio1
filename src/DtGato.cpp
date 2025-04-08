@@ -65,3 +65,7 @@ void DtGato::mostrarInfDtGato() {
     }
 }
 
+
+DtGato::~DtGato() {
+    
+}
