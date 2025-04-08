@@ -43,3 +43,6 @@ void DtMascota::setRacionDiaria(float racion){
     DtRD = racion;
 }
 
+DtMascota::~DtMascota(){
+    //destructor vacio, para guiar al compilador en el borrado de la herencia
+}
