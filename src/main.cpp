@@ -192,7 +192,7 @@ int main () {
                 cin >> ci;
                 try{
                     eliminarSocio(ci);
-                    cout << "\nEl socio se ha eliminado exitosamente}n";
+                    cout << "\nEl socio se ha eliminado exitosamente\n";
                 }catch(const invalid_argument& q){
                     cout << "Error:" << q.what() << endl;
                 }
