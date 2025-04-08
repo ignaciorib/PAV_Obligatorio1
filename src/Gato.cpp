@@ -42,3 +42,7 @@ int Gato::getTipoPelo () {
 float Gato::obtenerRD() {
     return getPeso() * 0.015;
 }
+
+Gato::~Gato() {
+    
+}
