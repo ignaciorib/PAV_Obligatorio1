@@ -20,6 +20,7 @@ class DtGato : public DtMascota {
         int getTipoPelo();
         void mostrarInfDtGato();
         virtual float obtenerDtRD();
+        virtual ~DtGato();
 };
 
 #endif /* DTGATO_H */
