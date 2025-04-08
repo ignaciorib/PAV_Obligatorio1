@@ -77,9 +77,9 @@ void DtPerro::mostrarInfDtPerro() {
             " kg" 
             "\nRacion diaria: " << obtenerDtRD();
     if (getVC())
-        cout << "\nTiene la vacuna de cachorro";
+        cout << "\nTiene la vacuna de cachorro\n";
     else
-        cout << "\nNo tiene la vacuna de cachorro";
+        cout << "\nNo tiene la vacuna de cachorro\n";
 }
 
 float DtPerro::obtenerDtRD() {
