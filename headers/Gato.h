@@ -19,7 +19,7 @@ class Gato: public Mascota {
         Gato(string, float, int, int, int);
         int getTipoPelo();
         virtual float obtenerRD();
-        /////////~Gato();
+        virtual ~Gato();
 };
 
 #endif /* GATO_H */
