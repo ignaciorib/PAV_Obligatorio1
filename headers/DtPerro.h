@@ -22,6 +22,7 @@ class DtPerro : public DtMascota {
         bool getVC();
         void mostrarInfDtPerro();
         virtual float obtenerDtRD();
+        virtual ~DtPerro();
 };
 
 #endif /* DTPERRO_H */
