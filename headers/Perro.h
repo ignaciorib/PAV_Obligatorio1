@@ -22,7 +22,7 @@ class Perro: public Mascota {
         int getRaza();
         bool getVacu();
         virtual float obtenerRD();
-        ////////~Perro();
+        virtual ~Perro();
 };
 
 #endif /* PERRO_H */
