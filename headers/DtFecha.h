@@ -19,7 +19,7 @@ class DtFecha{
         int getAnio();
         int getMes();
         int getDia();
-        ///////~DtFecha();
+        ~DtFecha();
 };
 
 
