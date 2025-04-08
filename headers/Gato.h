@@ -10,15 +10,17 @@
 
 using namespace std;
 
+
 class Gato: public Mascota {
     private:
         tipoPelo TipoPeloG;
     public:
         Gato();
-        Gato(string, float, int , int);
+        Gato(string, float, int, int, int);
         int getTipoPelo();
-        float obtenerRD();
+        virtual float obtenerRD();
         /////////~Gato();
 };
 
 #endif /* GATO_H */
+

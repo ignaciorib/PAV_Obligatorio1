@@ -2,33 +2,35 @@
 #define MASCOTA_H
 
 #include <iostream>
-#include <string>
-#include "../headers/Socio.h"
-#include "../headers/Genero.h"
-#include "../headers/Consulta.h"
+#include <string.h>
 
 #include "Genero.h"
 
-
-
 using namespace std;
+
 
 class Mascota {
     private:
         string nombreMsc;
         float peso;
         Genero GeneroM;
-        bool P_G;
+        int P_G;
+        float rD;
     public:
         Mascota();
-        Mascota(string, float, int);
+        Mascota(string, float, int g, int p_g);
         float getPeso();
         string getNombreMsc();
         int getGenero();
         bool getPerroGato();
+        void setRD(float);
         virtual float obtenerRD() = 0;
+        
+
         /////////~Mascota();
-        //virtual ~Mascota
 };
 
-#endif 
+
+
+#endif /* MASCOTA_H */
+

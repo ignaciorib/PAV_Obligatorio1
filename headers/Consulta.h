@@ -16,10 +16,8 @@ class Consulta {
     public:
         Consulta();
         Consulta(string, int, int, int);
-        Consulta(Consulta&);
         DtFecha* getFechaConsulta();
         string getMotivo();
-        //void mostrarInfo();
 };
 
 #endif

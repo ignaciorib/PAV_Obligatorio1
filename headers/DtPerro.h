@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 class DtPerro : public DtMascota {
     private:
         RazaPerro raza;
@@ -18,12 +19,9 @@ class DtPerro : public DtMascota {
         DtPerro();
         DtPerro(string, int g, float, int p_g, int r, bool);
         int getRaza();
-        int getVC();
-        void setVc(int);
-        void setRaza(int);
+        bool getVC();
         void mostrarInfDtPerro();
-        float obtenerRD();
-        
+        virtual float obtenerDtRD();
 };
 
 #endif /* DTPERRO_H */

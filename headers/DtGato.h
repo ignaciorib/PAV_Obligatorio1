@@ -8,8 +8,8 @@
 #include "DtMascota.h"
 #include "TipoPelo.h"
 
-
 using namespace std;
+
 
 class DtGato : public DtMascota {
     private:
@@ -18,9 +18,8 @@ class DtGato : public DtMascota {
         DtGato();
         DtGato(string, int g, float, int p_g, int pelo);
         int getTipoPelo();
-        void setTipoPelo(int);
         void mostrarInfDtGato();
-        float obtenerRD();
+        virtual float obtenerDtRD();
 };
 
 #endif /* DTGATO_H */

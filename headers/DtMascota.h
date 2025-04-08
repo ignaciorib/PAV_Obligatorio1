@@ -7,31 +7,26 @@
 
 #include "Genero.h"
 
-
 using namespace std;
+
 
 class DtMascota {
     private:
         string nombre;
         Genero genero;
         float peso;
-        float racionDiaria;
+        float DtRD;
         int P_G;            //1 es gato, 0 es perro
     public:
         DtMascota();
         DtMascota(string, int g, float, int p_g);
-        
-        void setNombre(string);
-        void setGenero(int);
-        void setPeso(float);
-        void setRacionDiaria(float);
-        void setPerroGato(int);
+        void setRacionDiaria(float racionDiaria);
         int getPerroGato();
         int getDtGenero();
         float getDtPeso();
-        virtual float obtenerRD() = 0;
         string getNombreDtMsc();
-        //virtual float obtenerDtRD() = 0;
+        virtual float obtenerDtRD() = 0;
+        
 
 };
 

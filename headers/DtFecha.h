@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 class DtFecha{
     private:
         int dia;
@@ -14,16 +15,13 @@ class DtFecha{
     public:
         DtFecha();
         DtFecha(int, int, int);
-        DtFecha(DtFecha &);
+        DtFecha(DtFecha&);
         int getAnio();
         int getMes();
         int getDia();
-        void setDia(int);
-        void setMes(int);
-        void setAnio(int);
-        //////////////////////////////////DtFecha getFecha();??????????????????
-        ~DtFecha();
+        ///////~DtFecha();
 };
 
 
 #endif /* DTFECHA_H */
+

@@ -1,11 +1,16 @@
+#ifndef PERRO_H
+#define PERRO_H
+
 #include <iostream>
 #include <string.h>
 #include <stdbool.h>
 
+#include "Genero.h"
 #include "Mascota.h"
 #include "RazaPerro.h"
 
 using namespace std;
+
 
 class Perro: public Mascota {
     private:
@@ -13,9 +18,12 @@ class Perro: public Mascota {
         bool vacunaCachorro;
     public:
         Perro();
-        Perro(string, float, int genero, int raza, bool);
-        int getRazaP();
+        Perro(string, float, int genero, int, int raza, bool);
+        int getRaza();
         bool getVacu();
-        float obtenerRD();
+        virtual float obtenerRD();
         ////////~Perro();
 };
+
+#endif /* PERRO_H */
+
