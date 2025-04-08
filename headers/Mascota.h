@@ -27,7 +27,6 @@ class Mascota {
         virtual float obtenerRD() = 0;
         
         virtual ~Mascota(); //destructor virtual, correjir warning en delS. Socio.cpp
-        /////////~Mascota();
 };
 
 
