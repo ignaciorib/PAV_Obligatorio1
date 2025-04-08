@@ -85,3 +85,5 @@ void DtPerro::mostrarInfDtPerro() {
 float DtPerro::obtenerDtRD() {
     return getDtPeso() * 0.025;
 }
+
+DtPerro::~DtPerro() {}
